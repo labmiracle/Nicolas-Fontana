@@ -36,3 +36,14 @@ function palabraMasLarga(str) {
 }
 
 console.assert(palabraMasLarga("Erase una vez que se era") === "Erase");
+
+
+function primeraMayuscula(str) {
+  const palabras = str.split(" ")
+  const palabrasMayusculas = palabras.map(palabra => {
+    return palabra[0].toUpperCase() + palabra.slice(1)
+  })
+  return palabrasMayusculas.join(" ")
+}
+
+console.assert(primeraMayuscula('En un lugar de la Mancha') === 'En Un Lugar De La Mancha');

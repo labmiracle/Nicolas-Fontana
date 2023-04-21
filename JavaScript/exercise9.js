@@ -6,6 +6,11 @@
 */
 
 function addOnlyNums(...args) {
+  const validation = args.every((arg) => typeof arg === "number" || typeof arg === "string");
+  if (!validation) {
+    return "Data must be string or number";
+  }
+
   let acc = 0;
   for (const arg of args) {
     if (typeof arg === "number") {

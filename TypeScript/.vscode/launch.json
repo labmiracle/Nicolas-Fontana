@@ -10,6 +10,7 @@
             "name": "Launch Program",
             "skipFiles": ["<node_internals>/**"],
             "program": "${file}",
+            "outFiles": ["${workspaceFolder}/**/*.js"],
             "preLaunchTask": "npm: build"
         }
     ]

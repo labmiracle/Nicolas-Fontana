@@ -39,7 +39,7 @@ const playGame = (deckSize: number) => {
     do {
         const player1Card: number = pickCard(deck);
         const player2Card: number = pickCard(deck);
-        console.log(`Ronda ${cont++}`);
+        console.log(`Ronda ${++cont}`);
         if (player1Card > player2Card) {
             scoreboard.player1++;
             console.log(`Carta del jugador 1: ${player1Card}\nCarta del jugador 2: ${player2Card}\n`);

@@ -32,7 +32,6 @@ function codeBreaker() {
         let gameOver = false;
         const arrSecretNumber: string[] = getRandomNumber();
         let answer: string[] = [];
-        alert(arrSecretNumber.join(""));
         while (!gameOver) {
             const input = getUserInput();
             if (input === arrSecretNumber.join("")) {

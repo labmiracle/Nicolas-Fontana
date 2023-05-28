@@ -8,6 +8,7 @@ const firstCharacterRepeatedConsecutively = (str: string): number => {
         if (strLowerCase[i] == " ") {
             continue;
         }
+        console.log(i);
         if (strLowerCase[i - 1] == strLowerCase[i]) {
             index = i;
             break;
@@ -15,7 +16,5 @@ const firstCharacterRepeatedConsecutively = (str: string): number => {
     }
     return index;
 };
-
-console.log(firstCharacterRepeatedConsecutively("HoOla, cómo va?"));
 
 export default firstCharacterRepeatedConsecutively;

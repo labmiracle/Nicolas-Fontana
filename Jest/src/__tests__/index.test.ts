@@ -1,0 +1,63 @@
+import fizzBuzz from "../exercise-1.1";
+import isLeapYear from "../exercise-1.2";
+import adnCleaner from "../exercise-1.3";
+
+describe("FizzBuzz test", () => {
+    test("Número divisible por 3", () => {
+        expect(fizzBuzz(6)).toBe("Fizz");
+    });
+    test("Número divisble por 5", () => {
+        expect(fizzBuzz(10)).toBe("Buzz");
+    });
+    test("Número divisble por 3 y 5", () => {
+        expect(fizzBuzz(15)).toBe("FizzBuzz");
+    });
+    test("Número = 0", () => {
+        expect(fizzBuzz(0)).toBe(0);
+    });
+    test("Número no divisible por 3 o 5", () => {
+        expect(fizzBuzz(7)).toBe(7);
+    });
+    test("Recibe un string", () => {
+        // @ts-expect-error testeando un argumento inválido
+        expect(() => fizzBuzz("a")).toThrow("Must be a number");
+    });
+});
+
+describe("Año bisiesto test", () => {
+    test("Divisible por 4 y no divisible por 100", () => {
+        expect(isLeapYear(2004)).toBeTruthy;
+    });
+    test("Divisible por 400", () => {
+        expect(isLeapYear(2000)).toBeTruthy;
+    });
+    test("Divisible por 4 y 100 pero no por 400", () => {
+        expect(isLeapYear(2100)).toBeFalsy;
+    });
+    test("No es divisible por 4", () => {
+        expect(isLeapYear(2003)).toBeFalsy;
+    });
+    test("Recibe un string", () => {
+        // @ts-expect-error testeando un argumento inválido
+        expect(() => isLeapYear("a")).toThrow("Must be a number");
+    });
+});
+
+describe("ADN test", () => {
+    test("El argumento es una cadena vacía", () => {
+        expect(adnCleaner("")).toBe("");
+    });
+    test("El argumento es una cadena canónica", () => {
+        expect(adnCleaner("CTAGGGTA")).toBe("CTAGGGTA")
+    })
+    test("El argumento no es una cadena canónica con minúsculas", () => {
+        expect(adnCleaner("CcTAGGasdGTAe")).toBe("CTAGGGTA")
+    })
+    test("El argumento no contiene valores base canónicos", () => {
+        expect(adnCleaner("XBNFLH")).toBe("")
+    })
+    test("El argumento no es una cadena", () => {
+        // @ts-expect-error testeando un argumento inválido
+        expect(() => adnCleaner(123)).toThrow("Must be a string")
+    })
+});

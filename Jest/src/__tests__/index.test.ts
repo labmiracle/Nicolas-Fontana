@@ -2,6 +2,7 @@ import fizzBuzz from "../exercise-1.1";
 import isLeapYear from "../exercise-1.2";
 import adnCleaner from "../exercise-1.3";
 import addPositiveNumbers from "../exercise-1.4";
+import firstCharacterRepeatedConsecutively from "../exercise-1.5";
 
 describe("FizzBuzz test", () => {
     test("Número divisible por 3", () => {
@@ -49,31 +50,50 @@ describe("ADN test", () => {
         expect(adnCleaner("")).toBe("");
     });
     test("El argumento es una cadena canónica", () => {
-        expect(adnCleaner("CTAGGGTA")).toBe("CTAGGGTA")
-    })
+        expect(adnCleaner("CTAGGGTA")).toBe("CTAGGGTA");
+    });
     test("El argumento no es una cadena canónica con minúsculas", () => {
-        expect(adnCleaner("CcTAGGasdGTAe")).toBe("CTAGGGTA")
-    })
+        expect(adnCleaner("CcTAGGasdGTAe")).toBe("CTAGGGTA");
+    });
     test("El argumento no contiene valores base canónicos", () => {
-        expect(adnCleaner("XBNFLH")).toBe("")
-    })
+        expect(adnCleaner("XBNFLH")).toBe("");
+    });
     test("El argumento no es una cadena", () => {
         // @ts-expect-error testeando un argumento inválido
-        expect(() => adnCleaner(123)).toThrow("Must be a string")
-    })
+        expect(() => adnCleaner(123)).toThrow("Must be a string");
+    });
 });
 
-describe('Sumar números positivos del arreglo test', () => {
+describe("Sumar números positivos del arreglo test", () => {
     test("El argumento contiene solo números positivos", () => {
-        expect(addPositiveNumbers([1,2,3])).toBe(6)
-    })
+        expect(addPositiveNumbers([1, 2, 3])).toBe(6);
+    });
     test("El argumento contiene solo números positivos y cadenas", () => {
-        expect(addPositiveNumbers([1,2,3, "2", "a"])).toBe(8)
-    })
+        expect(addPositiveNumbers([1, 2, 3, "2", "a"])).toBe(8);
+    });
     test("El argumento esta vacío", () => {
-        expect(addPositiveNumbers([])).toBe(0)
-    })
+        expect(addPositiveNumbers([])).toBe(0);
+    });
     test("El argumento contiene numeros positivos y negativos", () => {
-        expect(addPositiveNumbers([1,2,3, -3, -1])).toBe(6)
-    })
-})
+        expect(addPositiveNumbers([1, 2, 3, -3, -1])).toBe(6);
+    });
+});
+
+describe("Primer letra repetida consecutivamente test", () => {
+    test("El argumento no contiene un caracter que se repita consecutivamente", () => {
+        expect(firstCharacterRepeatedConsecutively("Hola, cómo va?")).toBe(-1);
+    });
+    test("El argumento contiene un caracter que se repita consecutivamente", () => {
+        expect(firstCharacterRepeatedConsecutively("Hoola, cómo va?")).toBe(2);
+    });
+    test("El argumento contiene dos caracter que se repita consecutivamente", () => {
+        expect(firstCharacterRepeatedConsecutively("Hoolaa, cómo va?")).toBe(2);
+    });
+    test("La función no distingue entre mayúsculas y minúsculas", () => {
+        expect(firstCharacterRepeatedConsecutively("HoOla, cómo va?")).toBe(2);
+    });
+    test("El argumento no es una cadena", () => {
+        // @ts-expect-error testeando un argumento inválido
+        expect(() => firstCharacterRepeatedConsecutively(123)).toThrow("Must be a string");
+    });
+});

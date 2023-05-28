@@ -4,6 +4,7 @@ import adnCleaner from "../exercise-1.3";
 import addPositiveNumbers from "../exercise-1.4";
 import firstCharacterRepeatedConsecutively from "../exercise-1.5";
 import consecutiveValuesInArray from "../exercise-1.6";
+import lookup from "../exercise-1.7";
 
 describe("Ejercicio 1.1 - FizzBuzz", () => {
     test("Número divisible por 3", () => {
@@ -138,5 +139,33 @@ describe("Ejercicio 1.6 - Contador de 1 consecutivos en la matriz", () => {
                 [1, 0, 0],
             ])
         ).toBe(-1);
+    });
+});
+
+describe("Ejercicio 1.7 - lookup()", () => {
+    test("lookup(<login>, 'likes') should return likes for the specified user.", () => {
+        const actual = lookup("norvig", "likes");
+        const expected = ["AI", "Search", "NASA", "Mars"];
+
+        expect(actual).toEqual(expected);
+    });
+
+    test("lookup(<login>, 'lastName') should return the last name for the specified user", () => {
+        const actual = lookup("knuth", "lastName");
+        const expected = "Knuth";
+
+        expect(actual).toEqual(expected);
+    });
+
+    test("with unknown user should throw an error with the correct message", () => {
+        expect(() => {
+            lookup("nobody", "likes");
+        }).toThrow(/Could not find user/);
+    });
+
+    test("with unknown property should throw an error the correct message", () => {
+        expect(() => {
+            lookup("mfowler", "noprop");
+        }).toThrow(/Could not find property/);
     });
 });

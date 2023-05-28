@@ -1,6 +1,7 @@
 import fizzBuzz from "../exercise-1.1";
 import isLeapYear from "../exercise-1.2";
 import adnCleaner from "../exercise-1.3";
+import addPositiveNumbers from "../exercise-1.4";
 
 describe("FizzBuzz test", () => {
     test("Número divisible por 3", () => {
@@ -61,3 +62,18 @@ describe("ADN test", () => {
         expect(() => adnCleaner(123)).toThrow("Must be a string")
     })
 });
+
+describe('Sumar números positivos del arreglo test', () => {
+    test("El argumento contiene solo números positivos", () => {
+        expect(addPositiveNumbers([1,2,3])).toBe(6)
+    })
+    test("El argumento contiene solo números positivos y cadenas", () => {
+        expect(addPositiveNumbers([1,2,3, "2", "a"])).toBe(8)
+    })
+    test("El argumento esta vacío", () => {
+        expect(addPositiveNumbers([])).toBe(0)
+    })
+    test("El argumento contiene numeros positivos y negativos", () => {
+        expect(addPositiveNumbers([1,2,3, -3, -1])).toBe(6)
+    })
+})

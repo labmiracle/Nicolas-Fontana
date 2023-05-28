@@ -5,6 +5,7 @@ import addPositiveNumbers from "../exercise-1.4";
 import firstCharacterRepeatedConsecutively from "../exercise-1.5";
 import consecutiveValuesInArray from "../exercise-1.6";
 import lookup from "../exercise-1.7";
+import { setPrice, addToCart, Item } from "../exercise-1.8";
 
 describe("Ejercicio 1.1 - FizzBuzz", () => {
     test("Número divisible por 3", () => {
@@ -167,5 +168,41 @@ describe("Ejercicio 1.7 - lookup()", () => {
         expect(() => {
             lookup("mfowler", "noprop");
         }).toThrow(/Could not find property/);
+    });
+});
+
+describe("Ejercicio 1.8 - setPrice()", () => {
+    test("should set the price in the given item object, immutably.", () => {
+        const item: Item = {
+            name: "test",
+            price: 30,
+        };
+        const copy = Object.assign({}, item);
+
+        const actual = setPrice(item, 50);
+        const expected = {
+            name: "test",
+            price: 50,
+        };
+
+        expect(actual).toEqual(expected);
+        expect(item).toEqual(copy);
+    });
+});
+
+describe("Ejercicio 1.8 - addToCart()", () => {
+    test("should add item to cart, immutably", () => {
+        const originalCart: Item[] = [];
+        const item: Item = {
+            name: "Toy",
+            price: 30,
+        };
+        const copy = originalCart.slice();
+
+        const actual = addToCart(originalCart, item);
+        const expected = [item];
+
+        expect(actual).toEqual(expected);
+        expect(originalCart).toEqual(copy);
     });
 });

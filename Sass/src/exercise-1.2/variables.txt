@@ -1,0 +1,3 @@
+Las variables en Sass proporcionan una manera de definir y utilizar valores reutilizables en estilos CSS. Ofrecen beneficios como la
+reutilización de código, la legibilidad, la flexibilidad y la adaptabilidad, así como la capacidad de personalizar y compartir
+componentes de manera más eficiente.

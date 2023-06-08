@@ -1,0 +1,26 @@
+$dark-mode: true;
+
+// light mode
+$text-primary: #2b2a2a;
+$bg-primary: #ebebeb;
+
+@if ($dark-mode) {
+    $text-primary: #ebebeb;
+    $bg-primary: #2b2a2a;
+}
+
+@mixin text-format($size, $color, $bold: false) {
+    font-size: $size;
+    color: $color;
+    @if $bold {
+        font-weight: bold;
+    }
+}
+
+.container {
+    background: $bg-primary;
+}
+
+.important {
+    @include text-format(18px, $text-primary, true);
+}

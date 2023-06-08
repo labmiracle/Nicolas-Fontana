@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "sourceRoot": "",
+    "sources": [
+        "styles.scss",
+        "base/_mixins.scss"
+    ],
+    "names": [],
+    "mappings": "AAGA;ECFI;EACA,ODE+C",
+    "file": "styles.css"
+}

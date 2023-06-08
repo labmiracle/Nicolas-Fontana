@@ -1,0 +1,6 @@
+@use "./base/mixins";
+@use "./base/variables";
+
+.container {
+    @include mixins.font(nth(variables.$fonts, 1), nth(variables.$txt-colors, 3));
+}

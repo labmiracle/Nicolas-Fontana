@@ -1,0 +1,13 @@
+$base-size: 16px;
+
+.container {
+    .small {
+        font-size: $base-size * 0.8;
+    }
+    .medium {
+        font-size: $base-size;
+    }
+    .large {
+        font-size: $base-size * 1.2;
+    }
+}

@@ -1,0 +1,15 @@
+@mixin prefix($property, $value) {
+    -webkit-#{$property}: $value;
+    -moz-#{$property}: $value;
+    -ms-#{$property}: $value;
+    -o-#{$property}: $value;
+}
+
+@mixin margin-padding($values...) {
+    margin: $values;
+    padding: $values;
+}
+
+@mixin border($width, $style, $color) {
+    border-width: $width $style $color;
+}

@@ -1,0 +1,29 @@
+.monday {
+    background-color: lightblue;
+}
+
+.tuesday {
+    background-color: "lightgreen";
+}
+
+.wednesday {
+    background-color: "lightyellow";
+}
+
+.thursday {
+    background-color: "lightpink";
+}
+
+.friday {
+    background-color: "lightgrey";
+}
+
+.saturday {
+    background-color: "lightcoral";
+}
+
+.sunday {
+    background-color: "lightsalmon";
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,15 @@
+$days: (
+    monday: lightblue,
+    tuesday: "lightgreen",
+    wednesday: "lightyellow",
+    thursday: "lightpink",
+    friday: "lightgrey",
+    saturday: "lightcoral",
+    sunday: "lightsalmon",
+);
+
+@each $day, $color in $days {
+    .#{$day} {
+        background-color: $color;
+    }
+}

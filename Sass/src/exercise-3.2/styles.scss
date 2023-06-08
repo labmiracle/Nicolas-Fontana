@@ -1,0 +1,27 @@
+@mixin prefix($property, $value) {
+    -webkit-#{$property}: $value;
+    -moz-#{$property}: $value;
+    -ms-#{$property}: $value;
+    -o-#{$property}: $value;
+}
+
+@mixin margin-padding($values...) {
+    margin: $values;
+    padding: $values;
+}
+
+@mixin border($width, $style, $color) {
+    border: $width $style $color;
+}
+
+body {
+    @include margin-padding(20px 40px);
+    @include border(10px, solid, blue);
+    transition: all 0.3s ease;
+    @include prefix(transition, all 0.3s ease);
+    /* button style */
+    button {
+        font-size: 20px;
+        @include border(1px, solid, lightgrey);
+    }
+}

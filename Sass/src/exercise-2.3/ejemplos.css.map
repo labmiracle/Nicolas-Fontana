@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "sourceRoot": "",
+    "sources": [
+        "ejemplo.scss"
+    ],
+    "names": [],
+    "mappings": "AAgBA;EARI,QASA;EARA,SAQA;EAJA",
+    "file": "ejemplos.css"
+}

@@ -1,0 +1,4 @@
+El flujo de trabajo con CSS preprocesado agrega un paso adicional de compilación para convertir el código del preprocesador en CSS válido.
+Esto brinda ventajas como la reutilización de código, variables y funciones, lo que facilita el mantenimiento y la organización de los
+estilos en proyectos más grandes. Sin embargo, también implica una configuración adicional y una etapa de compilación antes de poder
+utilizar los estilos en un proyecto web.

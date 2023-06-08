@@ -1,0 +1,25 @@
+@function colorForDay($day) {
+    @if ($day == "monday") {
+        @return lightblue;
+    } @else if($day == "tuesday") {
+        @return lightcoral;
+    } @else if($day == "wednesday") {
+        @return lightcyan;
+    } @else if($day == "thursday") {
+        @return lightgoldenrodyellow;
+    } @else if($day == "friday") {
+        @return lightgray;
+    } @else if($day == "saturday") {
+        @return lightgreen;
+    } @else if($day == "sunday") {
+        @return lightpink;
+    }
+}
+
+$days: "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday";
+
+@each $day in $days {
+    .#{$day} {
+        background: colorForDay($day);
+    }
+}

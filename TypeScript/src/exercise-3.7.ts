@@ -7,9 +7,9 @@ function pushToCollection<Type>(item: Type, collection: Type[]): Type[] {
 }
 
 // Anadir algunas cosas a las colecciones
-pushToCollection(false, stringCollection);
+pushToCollection(false.toString(), stringCollection);
 pushToCollection("hi", stringCollection);
-pushToCollection([], stringCollection);
+pushToCollection("[]", stringCollection);
 
 pushToCollection(1, numberCollection);
 pushToCollection(2, numberCollection);

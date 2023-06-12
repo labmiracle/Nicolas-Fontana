@@ -31,17 +31,11 @@ function calcularDiasCrecimiento(velocidadCrecimiento, velocidadDecrecimiento, a
   }
 
   // resolution
-  let alturaActual = 0;
-  let dias = 0;
-
-  while (alturaDeseada > alturaActual) {
-    dias++;
-    alturaActual += velocidadCrecimiento - velocidadDecrecimiento;
-  }
+  const dias = Math.ceil(alturaDeseada / (velocidadCrecimiento - velocidadDecrecimiento));
 
   return dias;
 }
 
-const result = calcularDiasCrecimiento(6, 5, 10);
+const result = calcularDiasCrecimiento(3.7, 2, 3);
 
 console.log(result);

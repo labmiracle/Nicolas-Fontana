@@ -3,6 +3,7 @@ import State from "./Components/State";
 import Events from "./Components/Events";
 import RenderizadoCondicional from "./Components/RenderizadoCondicional";
 import Refs from "./Components/Refs";
+import Context from "./Components/Context";
 
 function App() {
     return (
@@ -17,6 +18,8 @@ function App() {
             <RenderizadoCondicional />
             <h1>Refs</h1>
             <Refs />
+            <h1>Context</h1>
+            <Context />
         </>
     );
 }

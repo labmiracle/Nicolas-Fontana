@@ -1,6 +1,7 @@
 import Props from "./Components/Props";
 import State from "./Components/State";
 import Events from "./Components/Events";
+import RenderizadoCondicional from "./Components/RenderizadoCondicional";
 
 function App() {
     return (
@@ -11,6 +12,8 @@ function App() {
             <State />
             <h1>ToDo</h1>
             <Events />
+            <h1>Renderizado condicional</h1>
+            <RenderizadoCondicional />
         </>
     );
 }

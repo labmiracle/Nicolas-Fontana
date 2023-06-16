@@ -5,6 +5,7 @@ import RenderizadoCondicional from "./Components/RenderizadoCondicional";
 import Refs from "./Components/Refs";
 import Context from "./Components/Context";
 import ListOfPostsWithDataFetched from "./Components/HOC";
+import Hooks from "./Components/Hooks";
 
 function App() {
     return (
@@ -22,7 +23,9 @@ function App() {
             <h1>Context</h1>
             <Context />
             <h1>HOC</h1>
-            <ListOfPostsWithDataFetched url="https://jsonplaceholder.typicode.com/posts" />
+            {/* <ListOfPostsWithDataFetched url="https://jsonplaceholder.typicode.com/posts" /> */}
+            <h1>Hooks</h1>
+            <Hooks />
         </>
     );
 }

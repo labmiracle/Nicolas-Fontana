@@ -21,7 +21,7 @@ export const withDataFetched = (Component: React.ComponentType<{ posts: Posts[] 
                 }
             };
             fetchData();
-        }, []);
+        }, [url]);
 
         return <Component posts={posts} />;
     };

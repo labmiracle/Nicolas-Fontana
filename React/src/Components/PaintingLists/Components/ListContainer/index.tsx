@@ -36,11 +36,21 @@ const ListContainer = () => {
         setTasks(updatedTasks);
     };
 
+    const handleEditTask = (updatedTask: string, taskId: number) => {
+        const updatedTasks = tasks.map(task => {
+            if (task.id === taskId) {
+                return { ...task, title: updatedTask };
+            }
+            return task;
+        });
+        setTasks(updatedTasks);
+    };
+
     return (
         <>
             <InputText inputValue={inputValue} setInputValue={setInputValue} />
             <AddTaskButton handleAddTask={handleAddTask} />
-            <List tasks={tasks} handleRemoveTask={handleRemoveTask} />
+            <List tasks={tasks} handleRemoveTask={handleRemoveTask} handleEditTask={handleEditTask} />
         </>
     );
 };

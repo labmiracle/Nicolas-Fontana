@@ -23,8 +23,10 @@ const ListItem = ({
     };
 
     const handleSave = () => {
-        handleEditTask(editedTask, task.id);
-        setEditing(false);
+        if (editedTask.trim() !== "") {
+            handleEditTask(editedTask, task.id);
+            setEditing(false);
+        }
     };
 
     const handleCancel = () => {

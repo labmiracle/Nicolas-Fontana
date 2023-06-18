@@ -5,7 +5,7 @@ const ListOfPosts = ({ posts }: { posts: Posts[] }) => {
     return (
         <>
             {posts.map(post => (
-                <ul>
+                <ul key={post.id}>
                     <li>User: {post.userId}</li>
                     <li>ID: {post.id}</li>
                     <li>Title: {post.title}</li>

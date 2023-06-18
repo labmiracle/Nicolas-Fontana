@@ -21,11 +21,11 @@ const Exercise4 = () => {
         <ul>
             {toDo.map(item =>
                 item.completed === true ? (
-                    <li>
+                    <li key={item.id}>
                         <del>{item.title}</del>
                     </li>
                 ) : (
-                    <li>{item.title}</li>
+                    <li key={item.id}>{item.title}</li>
                 )
             )}
         </ul>

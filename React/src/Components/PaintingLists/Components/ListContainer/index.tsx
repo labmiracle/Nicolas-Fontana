@@ -1,7 +1,7 @@
 import { useState } from "react";
 import InputText from "../InputText";
 import AddTaskButton from "../AddTaskButton";
-// import RemoveTaskButton from "../RemoveTaskButton";
+import RemoveTaskButton from "../RemoveTaskButton";
 import List from "../List";
 
 export interface Task {
@@ -32,17 +32,16 @@ const ListContainer = () => {
         }
     };
 
-    // const handleRemoveTask = (taskId: number) => {
-    //     const updatedTasks = tasks.filter(task => task.id !== taskId);
-    //     setTasks(updatedTasks);
-    // };
+    const handleRemoveTask = (taskId: number) => {
+        const updatedTasks = tasks.filter(task => task.id !== taskId);
+        setTasks(updatedTasks);
+    };
 
     return (
         <>
             <InputText inputValue={inputValue} setInputValue={setInputValue} />
             <AddTaskButton handleAddTask={handleAddTask} />
-            <List tasks={tasks} />
-            {/* <RemoveTaskButton handleRemoveTask={handleRemoveTask} /> */}
+            <List tasks={tasks} handleRemoveTask={handleRemoveTask} />
         </>
     );
 };

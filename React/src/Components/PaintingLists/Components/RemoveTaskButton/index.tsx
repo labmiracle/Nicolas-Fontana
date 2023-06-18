@@ -1,4 +1,4 @@
-const RemoveTaskButton = ({ handleRemoveTask }: { handleRemoveTask: (taskId: number) => void }) => {
-    return <button onClick={() => handleRemoveTask}>Eliminar tarea</button>;
+const RemoveTaskButton = ({ clickAction }: { clickAction: () => void }) => {
+    return <button onClick={clickAction}>Eliminar tarea</button>;
 };
 export default RemoveTaskButton;

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import InputText from "../InputText";
 import AddTaskButton from "../AddTaskButton";
-import RemoveTaskButton from "../RemoveTaskButton";
 import List from "../List";
 
 export interface Task {

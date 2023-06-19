@@ -1,10 +1,11 @@
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import Routes from "./Routes";
+import "./app.scss";
 
 function App() {
     return (
         <Router>
-            <nav>
+            <nav className="navbar">
                 <ul>
                     <li>
                         <Link to="/props">Props</Link>
@@ -35,7 +36,9 @@ function App() {
                     </li>
                 </ul>
             </nav>
-            <Routes />
+            <div className="container">
+                <Routes />
+            </div>
         </Router>
     );
 }

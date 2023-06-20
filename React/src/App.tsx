@@ -34,6 +34,9 @@ function App() {
                     <li>
                         <Link to="/painting-list">Painting List</Link>
                     </li>
+                    <li>
+                        <Link to="/tic-tac-toe">TicTacToe</Link>
+                    </li>
                 </ul>
             </nav>
             <div className="container">

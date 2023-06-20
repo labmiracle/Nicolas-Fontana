@@ -8,6 +8,7 @@ import Context from "../Components/Context";
 import ListOfPostsWithDataFetched from "../Components/HOC";
 import Hooks from "../Components/Hooks";
 import PaintingList from "../Components/PaintingLists";
+import TicTacToe from "../Components/TicTacToe";
 
 function RoutesPage() {
     return (
@@ -24,6 +25,7 @@ function RoutesPage() {
             />
             <Route path="/hooks" element={<Hooks />} />
             <Route path="/painting-list" element={<PaintingList />} />
+            <Route path="/tic-tac-toe" element={<TicTacToe />}/>
         </Routes>
     );
 }

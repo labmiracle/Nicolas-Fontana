@@ -26,9 +26,13 @@ function Game() {
         } else {
             description = "Ir al inicio del juego";
         }
-        return (
+        return move !== history.length - 1 ? (
             <li key={move}>
                 <button onClick={() => jumpTo(move)}>{description}</button>
+            </li>
+        ) : (
+            <li key={move}>
+                <p>Estás en el movimiento #{move}</p>
             </li>
         );
     });

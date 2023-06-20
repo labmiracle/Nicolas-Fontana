@@ -1,9 +1,17 @@
 import styles from "./index.module.scss";
 import { Fichas } from "../Game";
 
-function Square({ value, onSquareClick }: { value: Fichas; onSquareClick: () => void }) {
+function Square({
+    value,
+    onSquareClick,
+    isWinningSquare,
+}: {
+    value: Fichas;
+    onSquareClick: () => void;
+    isWinningSquare: boolean;
+}) {
     return (
-        <button className={styles.square} onClick={onSquareClick}>
+        <button className={`${styles.square} ${isWinningSquare ? styles.winningSquare : ""}`} onClick={onSquareClick}>
             {value}
         </button>
     );

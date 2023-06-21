@@ -9,7 +9,7 @@ function Board({
 }: {
     xIsNext: boolean;
     squares: Fichas[];
-    onPlay: (nextSquares: Fichas[]) => void;
+    onPlay: (nextSquares: Fichas[], i: number) => void;
 }) {
     const handleClick = (i: number) => {
         const nextSquares = [...squares];
@@ -21,7 +21,7 @@ function Board({
         } else {
             nextSquares[i] = "O";
         }
-        onPlay(nextSquares);
+        onPlay(nextSquares, i);
     };
 
     const winner = calculateWinner(squares);

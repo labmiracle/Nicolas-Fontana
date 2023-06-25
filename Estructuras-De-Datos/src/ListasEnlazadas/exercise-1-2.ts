@@ -64,10 +64,29 @@ class LinkedList<T> {
         }
         return false;
     }
+
+    invert() {
+        if (!this.head || !this.head.next) {
+            return;
+        }
+        let next: LinkedListNode<T> | null;
+        let previous: LinkedListNode<T> | null = null;
+        let current: LinkedListNode<T> | null = this.head;
+        while (current) {
+            next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+        this.head = previous;
+    }
 }
 
-const linkedList1 = new LinkedList();
-linkedList1.add(5);
-linkedList1.add(10);
-console.log(linkedList1.size());
-console.log(linkedList1.find(10));
+const list = new LinkedList();
+list.add(5);
+list.add(10);
+list.add(11);
+// console.log(list.size());
+// console.log(list.find(10));
+console.log(list.invert());
+console.log(list);

@@ -1,6 +1,6 @@
 class LinkedListNode<T> {
-    value: T;
-    next: LinkedListNode<T> | null;
+    public value: T;
+    public next: LinkedListNode<T> | null;
     constructor(value: T) {
         this.value = value;
         this.next = null;
@@ -8,8 +8,8 @@ class LinkedListNode<T> {
 }
 
 class LinkedList<T> {
-    head: LinkedListNode<T> | null;
-    length: number;
+    private head: LinkedListNode<T> | null;
+    private length: number;
     constructor() {
         this.head = null;
         this.length = 0;
@@ -89,4 +89,5 @@ list.add(11);
 // console.log(list.size());
 // console.log(list.find(10));
 console.log(list.invert());
-console.log(list);
+
+export default LinkedList;

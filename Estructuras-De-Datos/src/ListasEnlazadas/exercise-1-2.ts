@@ -8,8 +8,8 @@ class LinkedListNode<T> {
 }
 
 class LinkedList<T> {
-    private head: LinkedListNode<T> | null;
-    private length: number;
+    protected head: LinkedListNode<T> | null;
+    protected length: number;
     constructor() {
         this.head = null;
         this.length = 0;
@@ -90,4 +90,4 @@ list.add(11);
 // console.log(list.find(10));
 console.log(list.invert());
 
-export default LinkedList;
+export { LinkedListNode, LinkedList };

@@ -80,14 +80,27 @@ class LinkedList<T> {
         }
         this.head = previous;
     }
+
+    toArray() {
+        let current = this.head;
+        const arr = [];
+        while (current) {
+            arr.push(current.value);
+            current = current.next;
+        }
+        return arr;
+    }
 }
 
 const list = new LinkedList();
 list.add(5);
 list.add(10);
 list.add(11);
-// console.log(list.size());
-// console.log(list.find(10));
-console.log(list.invert());
+list.add(15);
+console.log(list.size());
+console.log(list.find(10));
+console.log(list.remove(11));
+list.invert();
+console.log("Lista simplemente enlazada:: ", list.toArray());
 
 export { LinkedListNode, LinkedList };

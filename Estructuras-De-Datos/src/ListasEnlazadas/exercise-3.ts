@@ -80,4 +80,4 @@ doublyLinkedList.add(5);
 doublyLinkedList.add(6);
 doublyLinkedList.remove(5);
 doublyLinkedList.invert();
-console.log(doublyLinkedList);
+console.log("Lista doblemente enlazada: ", doublyLinkedList.toArray());

@@ -71,6 +71,28 @@ class DoublyLinkedList<T> extends LinkedList<T> {
             current = nextNode;
         }
     }
+
+    deleteDups() {
+        let current: DoublyLinkedListNode<T> | null = this.head;
+        let previous: DoublyLinkedListNode<T> | null = null;
+        if (!current) return;
+        const visitedValues = new Set<T>();
+        while (current) {
+            if (visitedValues.has(current.value)) {
+                if (previous) {
+                    previous.next = current.next;
+                    if (current.next) {
+                        current.next.previous = previous;
+                    }
+                }
+                this.length--;
+            } else {
+                visitedValues.add(current.value);
+                previous = current;
+            }
+            current = current.next;
+        }
+    }
 }
 
 const doublyLinkedList = new DoublyLinkedList();
@@ -78,6 +100,8 @@ doublyLinkedList.add(4);
 doublyLinkedList.add(5);
 doublyLinkedList.add(5);
 doublyLinkedList.add(6);
+doublyLinkedList.add(6);
 doublyLinkedList.remove(5);
 doublyLinkedList.invert();
+doublyLinkedList.deleteDups();
 console.log("Lista doblemente enlazada: ", doublyLinkedList.toArray());

@@ -90,17 +90,39 @@ class LinkedList<T> {
         }
         return arr;
     }
+
+    deleteDups() {
+        let current: LinkedListNode<T> | null = this.head;
+        let previous: LinkedListNode<T> | null = null;
+        if (!current) return;
+        const visitedValues = new Set<T>();
+        while (current) {
+            if (visitedValues.has(current.value)) {
+                if (previous) {
+                    previous.next = current.next;
+                }
+                this.length--;
+            } else {
+                visitedValues.add(current.value);
+                previous = current;
+            }
+            current = current.next;
+        }
+    }
 }
 
 const list = new LinkedList();
 list.add(5);
 list.add(10);
+list.add(15);
 list.add(11);
+list.add(15);
 list.add(15);
 console.log(list.size());
 console.log(list.find(10));
 console.log(list.remove(11));
 list.invert();
-console.log("Lista simplemente enlazada:: ", list.toArray());
+list.deleteDups();
+console.log("Lista simplemente enlazada: ", list.toArray());
 
 export { LinkedListNode, LinkedList };

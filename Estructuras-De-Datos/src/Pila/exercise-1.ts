@@ -1,4 +1,4 @@
-class Pila<T> {
+export default class Pila<T> {
     private items: T[];
     constructor() {
         this.items = [];

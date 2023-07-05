@@ -140,6 +140,20 @@ class BinaryTree<T> {
         sortValues(this.root);
         return nodeValuesInOrder;
     }
+
+    size(): number {
+        let count = 0;
+        const traverseNodes = (node: TreeNode<T> | null) => {
+            if (node === null) {
+                return;
+            }
+            traverseNodes(node.left);
+            count++;
+            traverseNodes(node.right);
+        };
+        traverseNodes(this.root);
+        return count;
+    }
 }
 
 const binaryTree = new BinaryTree();
@@ -152,6 +166,7 @@ binaryTree.insert(5);
 console.log("In order: ", binaryTree.inOrder());
 console.log("In previous order: ", binaryTree.inPreviousOrder());
 console.log("In later order: ", binaryTree.inLaterOrder());
+console.log("Cantidad de elementos en el árbol: ", binaryTree.size());
 
 /*
        3

@@ -154,6 +154,38 @@ class BinaryTree<T> {
         traverseNodes(this.root);
         return count;
     }
+
+    findMinMaxValues(): { minValue: number; maxValue: number } | undefined {
+        let minValue: T | null = null;
+        let maxValue: T | null = null;
+
+        const traverseNodes = (node: TreeNode<T> | null) => {
+            if (node === null) {
+                return;
+            }
+
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+            if (minValue === null || node.value < minValue!) {
+                minValue = node.value;
+            }
+
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+            if (maxValue === null || node.value > maxValue!) {
+                maxValue = node.value;
+            }
+
+            traverseNodes(node.left);
+            traverseNodes(node.right);
+        };
+
+        traverseNodes(this.root);
+
+        if (minValue === null || maxValue === null) {
+            return;
+        }
+
+        return { minValue, maxValue };
+    }
 }
 
 const binaryTree = new BinaryTree();
@@ -167,6 +199,7 @@ console.log("In order: ", binaryTree.inOrder());
 console.log("In previous order: ", binaryTree.inPreviousOrder());
 console.log("In later order: ", binaryTree.inLaterOrder());
 console.log("Cantidad de elementos en el árbol: ", binaryTree.size());
+console.log("Valor mínimo y máximo: ", binaryTree.findMinMaxValues());
 
 /*
        3

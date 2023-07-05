@@ -149,8 +149,9 @@ binaryTree.insert(2);
 binaryTree.insert(1);
 binaryTree.insert(4);
 binaryTree.insert(5);
-
-console.log(binaryTree.inLaterOrder());
+console.log("In order: ", binaryTree.inOrder());
+console.log("In previous order: ", binaryTree.inPreviousOrder());
+console.log("In later order: ", binaryTree.inLaterOrder());
 
 /*
        3

@@ -1,0 +1,184 @@
+{
+	"info": {
+		"_postman_id": "1a01537c-4d39-46e4-acd4-8813620a97dd",
+		"name": "Postman API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20872704",
+		"_collection_link": "https://speeding-crescent-179556.postman.co/workspace/MiracleLab~ade3d179-4987-4072-a2aa-7b9408f0d20d/collection/20872704-1a01537c-4d39-46e4-acd4-8813620a97dd?action=share&creator=20872704&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Verificar API de health",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/zen",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"zen"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificar informacion del usuario",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/users/{{username}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"{{username}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear un repositorio",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"MiracleLab API Repo\",\r\n    \"private\": true,\r\n    \"auto_init\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/repos",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"repos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar un issue al repositorio",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"New logo\",\r\n    \"body\": \"We should have one\",\r\n    \"labels\": []\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/repos/:owner/:reponame/issues",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"repos",
+						":owner",
+						":reponame",
+						"issues"
+					],
+					"variable": [
+						{
+							"key": "owner",
+							"value": "{{username}}"
+						},
+						{
+							"key": "reponame",
+							"value": "{{repoName}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar un repositorio",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/repos/:owner/:repo",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"repos",
+						":owner",
+						":repo"
+					],
+					"variable": [
+						{
+							"key": "owner",
+							"value": "{{username}}"
+						},
+						{
+							"key": "repo",
+							"value": "{{repoName}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "username",
+			"value": "NicolasFontana",
+			"type": "string"
+		},
+		{
+			"key": "url",
+			"value": "https://api.github.com",
+			"type": "string"
+		},
+		{
+			"key": "repoName",
+			"value": "MiracleLab-API-Repo",
+			"type": "string"
+		}
+	]
+}
